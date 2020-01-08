@@ -43,6 +43,8 @@ export EDITOR=vim
 # Display system info using neofetch
 neofetch --ascii_distro arch
 
+# Display entire curr dir path
+PROMPT='${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
 
 ##===========================================================================##
 #                               *** ALIAS ***                                 #

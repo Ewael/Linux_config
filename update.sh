@@ -19,7 +19,7 @@ elif [ "$1" = "vim" ]; then
 # i3 config
 elif [ "$1" = "i3" ]; then
     echo "cp i3/config ~"
-    cp i3/config ~
+    cp i3/config ~/.config/i3
 # wrong arg
 else
     echo "Not supported yet"

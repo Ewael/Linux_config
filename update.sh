@@ -5,26 +5,44 @@
 # Usage: ./update.sh arg
 
 # all
+all=false
 if [ "$1" = "all" ]; then
-    echo "Updating all config files"
-    cp zsh/.zshrc general/.Xresources vim/.vimrc ~
-# .zshrc
-elif [ "$1" = "zsh" ]; then
-    echo "cp zsh/.zshrc ~"
-    cp zsh/.zshrc ~
-# .Xresources
-elif [ "$1" = "general" ]; then
-    echo "cp general/.Xresources ~"
-    cp general/.Xresources ~
-# .vimrc
-elif [ "$1" = "vim" ]; then
-    echo "cp vim/.vimrc ~"
-    cp vim/.vimrc ~
-# i3 config
-elif [ "$1" = "i3" ]; then
-    echo "cp i3/config ~"
-    cp i3/config ~/.config/i3
-# wrong arg
-else
-    echo "Not supported yet"
+    all=true
 fi
+
+# zsh
+if [ "$1" = "zsh" ] || [ "$all" = true ]; then
+    echo "Updating zsh config file"
+    cp zsh/.zshrc ~
+fi
+
+# system
+if [ "$1" = "general" ] || [ "$all" = true ]; then
+    echo "Updating .X**** files"
+    cp general/.Xresources general/.xinitrc ~
+fi
+
+# vim
+if [ "$1" = "vim" ] || [ "$all" = true ]; then
+    echo "Updating vim config file"
+    cp vim/.vimrc ~
+fi
+
+# i3
+if [ "$1" = "i3" ] || [ "$all" = true ]; then
+    echo "Updating i3 config file"
+    cp i3/config ~/.config/i3
+fi
+# redshift
+
+if [ "$1" = "red" ] || [ "$all" = true ]; then
+    echo "Updating redshift config file"
+    cp redshift/redshift.conf ~/.config
+fi
+
+# wrong arg
+if [ $# != 1 ]; then
+    echo "Please choose a valid option"
+fi
+
+echo "Done"

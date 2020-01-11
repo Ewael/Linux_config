@@ -8,10 +8,10 @@
 if [ "$1" = "zsh" ]; then
     echo "cp zsh/.zshrc ~"
     cp zsh/.zshrc ~
-# .Xressources
+# .Xresources
 elif [ "$1" = "general" ]; then
-    echo "cp general/.Xressources ~"
-    cp general/.Xressources ~
+    echo "cp general/.Xresources ~"
+    cp general/.Xresources ~
 # .vimrc
 elif [ "$1" = "vim" ]; then
     echo "cp vim/.vimrc ~"

@@ -78,6 +78,8 @@ endfunc
 "       REMAPPING
 "" ---------------------
 
+" Save
+map <F3> :w <CR>
 " Quit and save
 map <F4> :x <CR>
 " Remove all trailling space

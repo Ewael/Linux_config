@@ -31,7 +31,7 @@ fi
 # i3
 if [ "$1" = "i3" ] || [ "$all" = true ]; then
     echo "Updating i3 config file"
-    cp i3/config ~/.config/i3
+    cp i3/config ~/.i3
 fi
 # redshift
 

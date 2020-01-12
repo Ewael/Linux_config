@@ -29,6 +29,10 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec terminal
 
+# start a terminal from curr working dir
+# see https://github.com/schischi/xcwd
+bindsym $mod+Shift+Return exec urxvt -cd "`xcwd`"
+
 # kill focused window
 bindsym $mod+Shift+q kill
 

@@ -88,9 +88,10 @@ alias coolog='git log --graph --decorate'  # Nice display of git log
 alias ccomp='gcc -Wall -Wextra -Werror -std=c99 -O1 -o'
 
 # Redshift
-alias redl='redshift 4000 -b 0.6 -o'
-alias redh='redshift 6500 -b 0.8 -o'
+alias redl='redshift -O 3500 -b 0.6'
+alias redh='redshift -O 6000 -b 0.8'
 alias redx='redshift -x'
+
 
 ##===========================================================================##
 #                             *** FUNCTION ***                                #

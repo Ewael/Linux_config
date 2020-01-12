@@ -47,6 +47,7 @@ neofetch --ascii_distro arch
 # Display entire curr dir path
 PROMPT='${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
 
+
 ##===========================================================================##
 #                               *** ALIAS ***                                 #
 ##===========================================================================##
@@ -86,6 +87,10 @@ alias coolog='git log --graph --decorate'  # Nice display of git log
 # C
 alias ccomp='gcc -Wall -Wextra -Werror -std=c99 -O1 -o'
 
+# Redshift
+alias redl='redshift 4000 -b 0.6 -o'
+alias redh='redshift 6500 -b 0.8 -o'
+alias redx='redshift -x'
 
 ##===========================================================================##
 #                             *** FUNCTION ***                                #

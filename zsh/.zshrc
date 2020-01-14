@@ -92,6 +92,9 @@ alias redl='redshift -O 3500 -b 0.6'
 alias redh='redshift -O 6000 -b 0.8'
 alias redx='redshift -x'
 
+# Misc
+alias lol='fortune | cowsay | lolcat'
+
 
 ##===========================================================================##
 #                             *** FUNCTION ***                                #

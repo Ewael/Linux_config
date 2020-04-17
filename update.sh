@@ -6,7 +6,7 @@
 
 # help
 if [ "$1" = "--help" ]; then
-    echo "Exec ./update.sh with one of the following arg:
+    echo "Exec ./update.sh with one of the following args:
 
         chromium    - chromium flags
         general     - xinitrc and Xresources files
@@ -71,7 +71,12 @@ fi
 # zsh
 if [ "$1" = "zsh" ] || [ "$arch" = true ] || [ "$kali" = true ]; then
     echo "-- Updating zsh config file"
-    cp zsh/.zshrc ~
+    if [ "$arch" = true ]; then
+        cp zsh/Arch/.zshrc ~
+    fi
+    if [ "$kali" = true ]; then
+        cp zsh/Kali/.zshrc ~
+    fi
 fi
 
 ####### END #######

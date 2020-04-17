@@ -6,7 +6,6 @@
 
 # help
 if [ "$1" = "--help" ]; then
-<<<<<<< HEAD
     echo "Exec ./update.sh with one of the following args:
 
         chromium    - chromium flags

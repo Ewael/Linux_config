@@ -7,7 +7,7 @@
 
 # Path to your oh-my-zsh installation
 # Do not forget to change name
-export ZSH="/home/ewael/.oh-my-zsh"
+export ZSH="/root/.oh-my-zsh"
 
 # You can find more standard themes in ~/.oh-my-zsh/themes/*
 ZSH_THEME="robbyrussell"

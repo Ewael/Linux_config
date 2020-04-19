@@ -77,6 +77,7 @@ alias ..='cd ..'
 alias sl='ls'  # Avoid spelling mistake
 alias h='history'  # Show history
 alias cp="cp -i"  # Confirm before overwriting something
+alias rm='rm -iv' # Confirm before removing something
 
 # Git
 alias gst='git status'

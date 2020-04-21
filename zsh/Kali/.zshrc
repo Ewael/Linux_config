@@ -78,6 +78,7 @@ alias sl='ls'  # Avoid spelling mistake
 alias h='history'  # Show history
 alias cp="cp -i"  # Confirm before overwriting something
 alias rm='rm -iv' # Confirm before removing something
+alias terminator='terminator --geometry 1000x750+850+100' # Resize Terminator
 
 # Git
 alias gst='git status'

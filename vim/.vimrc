@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ntpeters/vim-better-whitespace' " Remove useless spaces
 Plugin 'vim-airline/vim-airline' " Colors on bottom bar
 Plugin 'vim-airline/vim-airline-themes' " Theme for vim-airline
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown visualisation
 
 " MUST BE AFTER PLUGINS
 call vundle#end()
@@ -22,6 +23,17 @@ filetype plugin indent on
 set t_Co=256 " Set vim to support 256 colors
 let g:airline_theme='luna' " Which theme for the bottom bar
 
+" Instant markdown options - uncomment to override defaults:
+let g:instant_markdown_slow = 1
+"let g:instant_markdown_autostart = 0
+"let g:instant_markdown_open_to_the_world = 1
+"let g:instant_markdown_allow_unsafe_content = 1
+"let g:instant_markdown_allow_external_content = 0
+"let g:instant_markdown_mathjax = 1
+"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
+"let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+let g:instant_markdown_python = 1
 
 
 "" ---------------------

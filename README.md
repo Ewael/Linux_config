@@ -7,15 +7,15 @@ Here is the repo for my Linux configuration.
 ```
 Exec ./update.sh with one of the following args:
 
-* chromium    - chromium flags
-* general     - xinitrc and Xresources files
-* i3          - i3 config file
-* redshift    - redshift config file
-* vim         - vim config file
-* zsh         - zsh config file
+        chromium    - chromium flags
+        general     - xinitrc and Xresources files
+        i3          - i3 config file
+        redshift    - redshift config file
+        vim         - vim config file
+        zsh         - zsh config file
 
-* arch        - general, i3, redshift, vim, zsh
-* kali        - chromium, redshift, vim, zsh
+        arch        - general, i3, redshift, vim, zsh
+        kali        - chromium, redshift, vim, zsh
 ```
 
 ## Installation

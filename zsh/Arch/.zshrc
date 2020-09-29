@@ -83,6 +83,7 @@ alias ga='git add *'
 alias gc='git commit -m'
 alias gp='git push'
 alias g='git'
+alias gt='git tag'
 alias coolog='git log --graph --decorate'  # Nice display of git log
 
 # C

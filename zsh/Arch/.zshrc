@@ -87,7 +87,7 @@ alias gt='git tag'
 alias coolog='git log --graph --decorate'  # Nice display of git log
 
 # C
-alias ccomp='gcc -Wall -Wextra -Werror -std=c99 -O1 -o'
+alias ccomp='gcc -Wall -Wextra -Werror -pedantic -std=c99 -O1 -o'
 
 # Redshift
 alias redl='redshift -O 3500 -b 0.6'

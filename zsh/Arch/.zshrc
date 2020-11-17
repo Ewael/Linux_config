@@ -87,10 +87,11 @@ alias ga='git add *'
 alias gc='git commit -m'
 alias gp='git push'
 alias g='git'
+alias gt='git tag'
 alias coolog='git log --graph --decorate'  # Nice display of git log
 
 # C
-alias ccomp='gcc -Wall -Wextra -Werror -std=c99 -O1 -o'
+alias ccomp='gcc -Wall -Wextra -Werror -pedantic -std=c99 -O1 -g -o'
 
 # Redshift
 alias redl='redshift -O 3500 -b 0.6'
@@ -113,3 +114,12 @@ gq() {
 	git push
 	git status
 };
+
+##===========================================================================##
+#                             *** MONITORS ***                                #
+##===========================================================================##
+
+xrandr --output DVI-I-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal \
+       --output DVI-D-1 --mode 1920x1080 --pos 3851x0 --rotate normal        \
+       --output HDMI-1 --mode 1920x1080 --pos 1920x0 --rotate normal         \
+       --output DP-1 --off

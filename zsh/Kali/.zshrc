@@ -80,6 +80,9 @@ alias cp="cp -i"  # Confirm before overwriting something
 alias rm='rm -iv' # Confirm before removing something
 alias terminator='terminator --geometry 1000x750+850+100' # Resize Terminator
 
+# Secu
+alias clean="rm -f peda-session* .gdb_history core"
+
 # Git
 alias gst='git status'
 alias ga='git add *'

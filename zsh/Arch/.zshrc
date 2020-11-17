@@ -64,6 +64,7 @@ alias wifi='nmcli dev wifi'  # Show all available wifi
 alias install='sudo pacman -Suy'  # Install package on arch base distro
 alias update='sudo pacman -Syu'  # Update package on arch base distro
 alias remove='sudo pacman -Rcns'  # Remove package on arch base distro
+
 # Active dual screen on i3. This may not work on all computer
 alias screen='xrandr --output HDMI-2 --mode 1920x1080 --same-as eDP-1'
 
@@ -76,6 +77,9 @@ alias sl='ls'  # Avoid spelling mistake
 alias h='history'  # Show history
 alias cp="cp -i"  # Confirm before overwriting something
 alias rm='rm -iv' # Confirm before removing something
+
+# Secu
+alias clean="rm -f peda-session* .gdb_history core"
 
 # Git
 alias gst='git status'

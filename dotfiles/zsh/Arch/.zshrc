@@ -11,6 +11,9 @@ export ZSH="/home/ewael/.oh-my-zsh"
 # You can find more standard themes in ~/.oh-my-zsh/themes/*
 ZSH_THEME="mytheme_orange"
 
+# Browser
+export BROWSER="/usr/bin/chromium"
+
 # You can find more standard plugins in ~/.oh-my-zsh/plugins/*
 plugins=(git colored-man-pages)
 plugins=(zsh-autosuggestions)

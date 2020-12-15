@@ -26,6 +26,16 @@ This repo is mainly a backup and an easy way to access my own config. It does no
         kali        - chromium, vim, zsh
 ```
 
+## Visual
+
+2020-12-15
+
+![3monitors](visual/3monitors.png)
+
+![img1](visual/img1.png)
+
+![img2](visual/img2.png)
+
 ## Installation
 
 - update and upgrade

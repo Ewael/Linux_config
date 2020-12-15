@@ -286,7 +286,7 @@ exec --no-startup-id xautolock -time 60 -locker i3lock-fancy -p -- maim
 exec --no-startup-id ~/Linux_config/monitors.sh
 
 # Wallpaper
-set $wpp /home/ewael/Linux_config/Wallpapers/orange_city.jpg
+set $wpp /home/ewael/Linux_config/wallpapers/orange_city.jpg
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id \
     nitrogen --set-auto $wpp --head=0 && \

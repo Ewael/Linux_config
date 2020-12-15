@@ -4,84 +4,119 @@
 # It takes one argument which is what want to update
 # Usage: ./update.sh arg
 
-# help
-if [ "$1" = "--help" ]; then
-    echo "Exec ./update.sh with one of the following args:
+display_help ()
+{
+    echo "./update.sh [arg] [option]
 
-        chromium    - chromium flags
+        chromium    - chromium flags (for Kali as root)
         general     - xinitrc and Xresources files
         i3          - i3 config file
-        redshift    - redshift config file
+        neofetch    - neofetch config file
+        picom       - picom config file
+        polybar     - polybar confiles files
         vim         - vim config file
-        zsh         - zsh config file
+        zsh [sys]   - zsh confile file + oh-my-zsh theme
+            + arch
+            + kali
 
-        arch        - general, i3, redshift, vim, zsh
-        kali        - chromium, redshift, vim, zsh"
-fi
+        arch        - general, i3, vim, zsh, neofetch, polybar, picom
+        kali        - chromium, vim, zsh"
+}
 
 arch=false
 kali=false
 
-####### GENERAL ARGS #######
 
-# arch
-if [ "$1" = "arch" ]; then
-    echo "# Updating general, i3, redshift, vim, zsh files"
-    arch=true
-fi
+update_chromium ()
+{
+    echo "[+] Updating chromium flags"
+    cp dotfiles/chromium/default-flags /etc/chromium.d/default-flags
+}
 
-# kali
-if [ "$1" = "kali" ]; then
-    echo "# Updating chromium, redshift, vim, zsh files"
-    kali=true
-fi
+update_general ()
+{
+    echo "[+] Updating general files"
+    cp dotfiles/general/.Xresources dotfiles/general/.xinitrc ~
+}
 
-####### INDIV ######
+update_i3 ()
+{
+    echo "[+] Updating i3 config file"
+    cp dotfiles/i3/config ~/.i3
+}
 
-# chromium
-if [ "$1" = "chromium" ] || [ "$kali" = true ]; then
-    echo "-- Updating chromium flags"
-    cp chromium/default-flags /etc/chromium.d/default-flags
-fi
+update_neofetch ()
+{
+    echo "[+] Updating neofetch config file"
+    cp dotfiles/neofetch/config.conf ~/.config/neofetch
+}
 
-# general
-if [ "$1" = "general" ] || [ "$arch" = true ]; then
-    echo "-- Updating general files"
-    cp general/.Xresources general/.xinitrc ~
-fi
+update_picom ()
+{
+    echo "[+] Updating picom config file"
+    cp dotfiles/picom/picom.conf ~/.config/picom
+}
 
-# i3
-if [ "$1" = "i3" ] || [ "$arch" = true ]; then
-    echo "-- Updating i3 config file"
-    cp i3/config ~/.i3
-fi
+update_polybar ()
+{
+    echo [+] Updating polybar config files
+    cp -r dotfiles/polybar/* ~/.config/polybar
+}
 
-# redshift
-if [ "$1" = "red" ] || [ "$arch" = true ] || [ "$kali" = true ]; then
-    echo "-- Updating redshift config file"
-    cp redshift/redshift.conf ~/.config
-fi
+update_vim ()
+{
+    echo "[+] Updating vim config file"
+    cp dotfiles/vim/.vimrc ~
+}
 
-# vim
-if [ "$1" = "vim" ] || [ "$arch" = true ] || [ "$kali" = true ]; then
-    echo "-- Updating vim config file"
-    cp vim/.vimrc ~
-fi
-
-# zsh
-if [ "$1" = "zsh" ] || [ "$arch" = true ] || [ "$kali" = true ]; then
-    echo "-- Updating zsh config file"
-    if [ "$arch" = true ]; then
-        cp zsh/Arch/.zshrc ~
+update_zsh ()
+{
+    if [ "$@" = "arch" ]; then
+        echo "[+] Updating zsh config file for Arch"
+        cp dotfiles/zsh/Arch/.zshrc ~
     fi
-    if [ "$kali" = true ]; then
-        cp zsh/Kali/.zshrc ~
+    if [ "$@" = "kali" ]; then
+        echo "[+] Updating zsh config file for Kali"
+        cp dotfiles/zsh/Kali/.zshrc ~
     fi
+}
+
+update_arch ()
+{
+    echo "[x] Updating Arch config files"
+    update_general
+    update_i3
+    update_neofetch
+    update_picom
+    update_polybar
+    update_vim
+    update_zsh "arch"
+}
+
+update_kali ()
+{
+    echo "[x] Updating Kali config files"
+    udpate_chromium
+    update_vim
+    update_zsh "kali"
+}
+
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ];
+then
+    display_help
+    exit 1
 fi
 
-####### END #######
-
-# wrong arg
-if [ $# != 1 ]; then
-    echo "Wrong number of arguments, please exec ./update.sh --help"
-fi
+case "$1" in
+    "arch")         update_arch;;
+    "kali")         update_kali;;
+    "chromium")     update_chromium;;
+    "general")      update_general;;
+    "i3")           update_i3;;
+    "neofetch")     update_neofetch;;
+    "picom")        update_picom;;
+    "polybar")      update_poylbar;;
+    "vim")          update_vim;;
+    "zsh")          update_zsh "$2";;
+    *)              display_help;;
+esac

@@ -72,6 +72,7 @@ alias gst='git status'
 alias ga='git add *'
 alias gcmsg='git commit -m'
 alias gp='git push'
+alias gl='git pull'
 alias gt='git tag'
 alias coolog='git log --graph --decorate'  # Nice display of git log
 
@@ -86,16 +87,3 @@ alias redx='redshift -x'
 
 # Misc
 alias lol='fortune | cowsay | lolcat'
-
-##===========================================================================##
-#                             *** FUNCTION ***                                #
-##===========================================================================##
-
-# Git quick: gq name_of_commit
-gq() {
-	git status
-	git add -A
-	git commit -m "$1"
-	git push
-	git status
-};

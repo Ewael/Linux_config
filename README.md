@@ -69,7 +69,7 @@ This repo is mainly a backup and an easy way to access my own config. It does no
     * `:PluginInstall`
 
 - `xcwd`
-    * `cd /Utils; git clone git@github.com:schischi/xcwd.git`
+    * `cd ~/Utils; git clone git@github.com:schischi/xcwd.git`
     * `cd xcwd; make`
     * `make install`
 
@@ -84,7 +84,7 @@ This repo is mainly a backup and an easy way to access my own config. It does no
     * `redshift`
     * `pavucontrol`
     * `thunar`
-    * `fortune-cm`
+    * `fortune-cm` (snapd)
     * `lolcat`
     * `cmatrix`
     * `cowsay`

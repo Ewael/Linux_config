@@ -14,6 +14,7 @@ Plugin 'ntpeters/vim-better-whitespace' " Remove useless spaces
 Plugin 'vim-airline/vim-airline' " Colors on bottom bar
 Plugin 'vim-airline/vim-airline-themes' " Theme for vim-airline
 Plugin 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown visualisation
+Plugin 'neoclide/coc.nvim' " COC
 
 " Theme
 Plugin 'ulwlu/elly.vim' " Theme: https://github.com/ulwlu/elly.vim

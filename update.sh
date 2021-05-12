@@ -45,6 +45,12 @@ update_i3 ()
     cp dotfiles/i3/config ~/.i3
 }
 
+update_rofi ()
+{
+    echo "[+] Updating rofi confile file"
+    cp dotfiles/rofi/dmenu_rofi.sh ~/.config/rofi
+}
+
 update_neofetch ()
 {
     echo "[+] Updating neofetch config file"
@@ -113,6 +119,7 @@ case "$1" in
     "chromium")     update_chromium;;
     "general")      update_general;;
     "i3")           update_i3;;
+    "rofi")         update_rofi;;
     "neofetch")     update_neofetch;;
     "picom")        update_picom;;
     "polybar")      update_poylbar;;

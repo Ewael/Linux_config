@@ -45,7 +45,8 @@ let g:instant_markdown_python = 1
 "" ---------------------
 
 " Theme
-" colorscheme elly
+let g:elly_termmode="cterm"
+colorscheme elly
 
 set encoding=utf-8
 

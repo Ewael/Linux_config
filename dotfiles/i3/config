@@ -278,8 +278,8 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Lock screen (does not work)
-# bindsym $mod+9 exec --no-startup-id [insert i3lock-fancy or blur here]
+# Lock screen
+bindsym $mod+9 exec --no-startup-id ~/Linux_config/scripts/lock.sh
 
 # Locks after 60 mins = 1 hour
 # exec --no-startup-id xautolock -time 60 -locker i3lock-fancy -p -- maim

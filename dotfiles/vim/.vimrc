@@ -80,6 +80,9 @@ set ruler
 set undolevels=1000
 set backspace=indent,eol,start
 
+" Auto scrolling
+let &scrolloff = winheight(0) / 5
+
 "" ---------------------
 "       FUNCTIONS
 "" ---------------------

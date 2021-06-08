@@ -17,8 +17,10 @@ Plugin 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown visualisation
 Plugin 'neoclide/coc.nvim' " COC
 
 " Theme
-Plugin 'ulwlu/elly.vim' " Theme: https://github.com/ulwlu/elly.vim
-Plugin 'ulwlu/abyss.vim' " Theme: https://github.com/ulwlu/abyss.vim
+"Plugin 'ulwlu/elly.vim' " Theme: https://github.com/ulwlu/elly.vim
+"Plugin 'ulwlu/abyss.vim' " Theme: https://github.com/ulwlu/abyss.vim
+"Plugin 'morhetz/gruvbox' " Theme: https://github.com/morhetz/gruvbox
+Plugin 'srcery-colors/srcery-vim' " Theme: https://github.com/srcery-colors/srcery-vim
 
 " MUST BE AFTER PLUGINS
 call vundle#end()
@@ -45,8 +47,10 @@ let g:instant_markdown_python = 1
 "" ---------------------
 
 " Theme
-let g:elly_termmode="cterm"
-colorscheme elly
+"let g:elly_termmode="cterm"
+colorscheme srcery
+" Do not change background color
+autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 
 set encoding=utf-8
 

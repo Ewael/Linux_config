@@ -61,6 +61,8 @@ update_picom ()
 {
     echo "[+] Updating picom config file"
     cp dotfiles/picom/picom.conf ~/.config/picom
+    echo "[+] Deleting old ~/.config/compton.conf"
+    rm -fv ~/.config/compton.conf
 }
 
 update_polybar ()

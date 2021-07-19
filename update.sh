@@ -60,7 +60,8 @@ update_neofetch ()
 update_picom ()
 {
     echo "[+] Updating picom config file"
-    cp dotfiles/picom/picom.conf ~/.config/picom
+    mkdir -p ~/.config/picom
+    cp dotfiles/picom/picom.conf ~/.config/picom/picom.conf
     echo "[+] Deleting old ~/.config/compton.conf"
     rm -fv ~/.config/compton.conf
 }

@@ -47,7 +47,7 @@ update_i3 ()
 
 update_rofi ()
 {
-    echo "[+] Updating rofi confile file"
+    echo "[+] Updating rofi config file"
     cp dotfiles/rofi/dmenu_rofi.sh ~/.config/rofi
 }
 
@@ -95,6 +95,7 @@ update_arch ()
     echo "[x] Updating Arch config files"
     update_general
     update_i3
+    update_rofi
     update_neofetch
     update_picom
     update_polybar

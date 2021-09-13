@@ -48,7 +48,7 @@ update_i3 ()
 update_rofi ()
 {
     echo "[+] Updating rofi config file"
-    cp dotfiles/rofi/dmenu_rofi.sh ~/.config/rofi
+    cp dotfiles/rofi/config.rasi ~/.config/rofi
 }
 
 update_neofetch ()

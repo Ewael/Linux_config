@@ -37,7 +37,7 @@ bindsym $mod+Shift+Return exec urxvt -cd "`xcwd`"
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/dmenu_rofi.sh
+bindsym $mod+d exec --no-startup-id rofi -show run -location 1
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu

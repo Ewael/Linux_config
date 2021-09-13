@@ -57,6 +57,7 @@ alias fresh='update && upgrade && autoremove && dist-upgrade'
 
 # Terminal
 alias la='ls -all'  # Display list of file with all information
+alias lsd='ls -d $PWD/*'  # List files with their full path
 alias q='exit'  # Exit terminal
 alias sl='ls'  # Avoid spelling mistake
 alias h='history'  # Show history

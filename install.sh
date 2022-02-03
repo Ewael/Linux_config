@@ -6,7 +6,7 @@ set -e
 # y/n prompt function
 check ()
 {
-    echo -n "[x] $a@ (y/n)? "
+    echo -n "[x] $@ (y/n)? "
     read answer
     if [ "$answer" != "${answer#[Yy]}" ];
     then

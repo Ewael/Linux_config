@@ -44,3 +44,10 @@ then
         redshift \
         chromium
 fi
+
+# install vundle
+if check "Install vundle";
+then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    echo [+] Don\'t forget to run \`:PluginInstall\` next time you open vim
+fi

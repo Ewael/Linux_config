@@ -18,10 +18,10 @@ check ()
 
 if check "Update .zshrc";
 then
-    cp -v dotfiles/zsh/.zshrc ~/.zshrc
+    cp -v dotfiles/zsh/.zshrc ~
 fi
 
 if check "Update .vimrc";
 then
-    cp -v dotfiles/vim/.vimrc ~/.vimrc
+    cp -v dotfiles/vim/.vimrc ~
 fi

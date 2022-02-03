@@ -46,6 +46,19 @@ then
         tree
 fi
 
+# install packages for YCM
+if check "Install packages to compile YouCompleteMe plugin";
+then
+    sudo pacman -S \
+        base-devel \
+        cmake \
+        go \
+        npm \
+        mono \
+        nodejs \
+        jdk-openjdk
+fi
+
 # install vundle
 if check "Install vundle";
 then

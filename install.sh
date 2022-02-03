@@ -42,7 +42,8 @@ then
     sudo pacman -S \
         vim \
         redshift \
-        chromium
+        chromium \
+        tree
 fi
 
 # install vundle

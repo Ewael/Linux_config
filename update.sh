@@ -28,5 +28,12 @@ fi
 
 if check "Update monitors config";
 then
-    cp -v scripts/monitors.sh.desktop ~/.config/autostart
+    if check "Is this home config";
+    then
+        cp -v scripts/monitors.sh.desktop ~/.config/autostart
+    fi
+    if check "Is this LSE config";
+    then
+        cp -v scripts/lse_monitors.sh.desktop ~/.config/autostart
+    fi
 fi

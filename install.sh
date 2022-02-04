@@ -90,3 +90,10 @@ if check "Install teams-for-linux";
 then
     sudo snap install teams-for-linux
 fi
+
+# set git account
+if check "Config git with default account (Ewael)";
+then
+    git config --global user.email "turodoras@gmail.com"
+    git config --global user.name "Ewael"
+fi

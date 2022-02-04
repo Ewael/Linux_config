@@ -28,5 +28,5 @@ fi
 
 if check "Update monitors config";
 then
-    sudo cp -v scripts/monitors.sh ~/.config/autostart-scripts/
+    cp -v scripts/monitors.sh.desktop ~/.config/autostart
 fi

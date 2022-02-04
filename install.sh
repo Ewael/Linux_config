@@ -42,8 +42,18 @@ then
     sudo pacman -S \
         vim \
         redshift \
-        chromium \
         tree
+fi
+
+# install chrome
+if check "Install Google Chrome browser";
+then
+    mkdir ~/Utils
+    cd ~/Utils
+    git clone https://aur.archlinux.org/google-chrome.git
+    cd google-chrome
+    makepkg -s
+    sudo pacman -U --noconfirm google-chrome*
 fi
 
 # install packages for YCM

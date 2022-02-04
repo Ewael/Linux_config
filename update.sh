@@ -26,6 +26,11 @@ then
     cp -v dotfiles/vim/.vimrc ~
 fi
 
+if check "Update terminator";
+then
+    cp -v dotfiles/terminator/config ~/.config/terminator
+fi
+
 if check "Update monitors config";
 then
     if check "Is this home config";

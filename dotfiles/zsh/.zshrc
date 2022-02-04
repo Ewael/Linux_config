@@ -10,7 +10,7 @@ export ZSH="/home/ewael/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 # Browser
-export BROWSER="/usr/bin/chromium"
+export BROWSER="/usr/bin/google-chrome-stable"
 
 # You can find more standard plugins in ~/.oh-my-zsh/plugins/*
 plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)

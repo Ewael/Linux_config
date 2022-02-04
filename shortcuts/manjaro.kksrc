@@ -9,7 +9,7 @@ Switch to Next Keyboard Layout=
 AboutApp=
 AboutKDE=
 Activate Next Tab=Ctrl+]; Ctrl+PgDown
-Activate Previous Tab=Ctrl+[; Ctrl+PgUp
+Activate Previous Tab=Ctrl+PgUp; Ctrl+[
 ActualSize=Ctrl+0
 AddBookmark=Ctrl+B
 Back=Back
@@ -20,9 +20,9 @@ Clear=
 Close=Ctrl+Esc; Ctrl+W
 ConfigureNotifications=
 ConfigureToolbars=
-Copy=Ctrl+Ins; Ctrl+C
+Copy=Ctrl+C; Ctrl+Ins
 CreateFolder=F10
-Cut=Shift+Del; Ctrl+X
+Cut=Ctrl+X; Shift+Del
 DeleteFile=Shift+Del
 DeleteWordBack=Ctrl+Backspace
 DeleteWordForward=Ctrl+Del
@@ -55,7 +55,7 @@ Next=PgDown
 NextCompletion=Ctrl+Down
 Open=Ctrl+O
 OpenRecent=
-Paste=Ctrl+V; Shift+Ins
+Paste=Shift+Ins; Ctrl+V
 Paste Selection=Ctrl+Shift+Ins
 Preferences=Ctrl+Shift+,
 PrevCompletion=Ctrl+Up
@@ -101,7 +101,7 @@ Toggle Touchpad=Touchpad Toggle
 
 [kded5][Global Shortcuts]
 Show System Activity=Ctrl+Esc
-display=Display; Meta+P
+display=Meta+P; Display
 
 [khotkeys][Global Shortcuts]
 {9059cddd-77af-4101-a747-2243a1949d78}=Ctrl+Alt+T
@@ -117,7 +117,7 @@ mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=
-Lock Session=Screensaver; Meta+L; Ctrl+Alt+L
+Lock Session=Ctrl+Alt+L; Screensaver; Meta+L
 Log Out=Meta+Shift+E
 Log Out Without Confirmation=
 Reboot Without Confirmation=
@@ -126,7 +126,7 @@ Reboot Without Confirmation=
 Activate Window Demanding Attention=Ctrl+Alt+A
 Decrease Opacity=
 Expose=Ctrl+F9
-ExposeAll=Launch (C); Ctrl+F10
+ExposeAll=Ctrl+F10; Launch (C)
 ExposeClass=Ctrl+F7
 Increase Opacity=
 Invert Screen Colors=
@@ -248,7 +248,7 @@ Window to Desktop 20=
 Window to Desktop 3=Meta+#
 Window to Desktop 4=Meta+$
 Window to Desktop 5=Meta+%
-Window to Desktop 6=Meta+Shift+ោ?
+Window to Desktop 6=
 Window to Desktop 7=
 Window to Desktop 8=
 Window to Desktop 9=
@@ -282,8 +282,11 @@ stopmedia=Media Stop
 _launch=Meta+E
 
 [org.kde.krunner.desktop][Global Shortcuts]
-RunClipboard=Alt+Shift+F2
-_launch=Alt+F2; Alt+Space; Search
+RunClipboard=
+_launch=Meta+D
+
+[org.kde.plasma.emojier.desktop][Global Shortcuts]
+_launch=Meta+.
 
 [org.kde.spectacle.desktop][Global Shortcuts]
 ActiveWindowScreenShot=Meta+Print
@@ -317,7 +320,11 @@ activate task manager entry 6=
 activate task manager entry 7=
 activate task manager entry 8=
 activate task manager entry 9=
+activate widget 28=Alt+F1
 activate widget 4=
+activate widget 50=
+activate widget 72=
+activate widget 94=
 clear-history=
 clipboard_action=Ctrl+Alt+X
 cycleNextAction=

@@ -43,7 +43,8 @@ then
         discord \
         redshift \
         tree \
-        vim
+        vim \
+        terminator
 fi
 
 # install chrome

@@ -76,3 +76,17 @@ then
     git clone git@github.com:VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
     echo [+] Don\'t forget to run \`:PluginInstall\` next time you open vim
 fi
+
+# install and enable snapd
+if check "Install and enable snapd";
+then
+    sudo pacman -S snapd
+    sudo systemctl enable --now snapd.socket
+    sudo ln -s /var/lib/snapd/snap /snap
+fi
+
+# install snap packages
+if check "Install teams-for-linux";
+then
+    sudo snap install teams-for-linux
+fi

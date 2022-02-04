@@ -40,9 +40,10 @@ fi
 if check "Install important packages";
 then
     sudo pacman -S \
-        vim \
+        discord \
         redshift \
-        tree
+        tree \
+        vim
 fi
 
 # install chrome

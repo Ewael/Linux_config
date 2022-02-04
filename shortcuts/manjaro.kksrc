@@ -1,4 +1,5 @@
 [ActivityManager][Global Shortcuts]
+switch-to-activity-4260c975-f9db-4be0-a206-709cd1a2d8f9=
 switch-to-activity-849d5743-a21b-4aed-946c-784cd3a31eef=
 
 [KDE Keyboard Layout Switcher][Global Shortcuts]
@@ -9,7 +10,7 @@ Switch to Next Keyboard Layout=
 AboutApp=
 AboutKDE=
 Activate Next Tab=Ctrl+]; Ctrl+PgDown
-Activate Previous Tab=Ctrl+PgUp; Ctrl+[
+Activate Previous Tab=Ctrl+[; Ctrl+PgUp
 ActualSize=Ctrl+0
 AddBookmark=Ctrl+B
 Back=Back
@@ -20,7 +21,7 @@ Clear=
 Close=Ctrl+Esc; Ctrl+W
 ConfigureNotifications=
 ConfigureToolbars=
-Copy=Ctrl+C; Ctrl+Ins
+Copy=Ctrl+Ins; Ctrl+C
 CreateFolder=F10
 Cut=Ctrl+X; Shift+Del
 DeleteFile=Shift+Del
@@ -46,7 +47,7 @@ Goto=
 GotoLine=Ctrl+G
 GotoPage=
 Help=F1
-Home=Home Page; Alt+Home
+Home=Alt+Home; Home Page
 KeyBindings=Ctrl+Alt+,
 Mail=
 MoveToTrash=Del
@@ -55,7 +56,7 @@ Next=PgDown
 NextCompletion=Ctrl+Down
 Open=Ctrl+O
 OpenRecent=
-Paste=Shift+Ins; Ctrl+V
+Paste=Ctrl+V; Shift+Ins
 Paste Selection=Ctrl+Shift+Ins
 Preferences=Ctrl+Shift+,
 PrevCompletion=Ctrl+Up
@@ -64,7 +65,7 @@ PrintPreview=
 Prior=PgUp
 Quit=Ctrl+Q
 Redo=Ctrl+Shift+Z
-Reload=F5; Refresh
+Reload=Refresh; F5
 RenameFile=F2
 Replace=Ctrl+R
 ReportBug=
@@ -105,6 +106,7 @@ display=Meta+P; Display
 
 [khotkeys][Global Shortcuts]
 {9059cddd-77af-4101-a747-2243a1949d78}=Ctrl+Alt+T
+{a951bf29-cd83-4594-a750-24af0abe23c2}=
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=
 
 [kmix][Global Shortcuts]
@@ -112,12 +114,12 @@ decrease_microphone_volume=Microphone Volume Down
 decrease_volume=Volume Down
 increase_microphone_volume=Microphone Volume Up
 increase_volume=Volume Up
-mic_mute=Meta+Volume Mute; Microphone Mute
+mic_mute=Microphone Mute; Meta+Volume Mute
 mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=
-Lock Session=Ctrl+Alt+L; Screensaver; Meta+L
+Lock Session=Ctrl+Alt+L; Meta+L; Screensaver
 Log Out=Meta+Shift+E
 Log Out Without Confirmation=
 Reboot Without Confirmation=
@@ -203,10 +205,10 @@ Window Fullscreen=F11
 Window Grow Horizontal=
 Window Grow Vertical=
 Window Lower=
-Window Maximize=Meta+PgUp
+Window Maximize=Alt+PgUp
 Window Maximize Horizontal=
 Window Maximize Vertical=
-Window Minimize=Meta+PgDown
+Window Minimize=
 Window Move=
 Window No Border=
 Window On All Desktops=
@@ -320,10 +322,15 @@ activate task manager entry 6=
 activate task manager entry 7=
 activate task manager entry 8=
 activate task manager entry 9=
+activate widget 111=
+activate widget 25=
 activate widget 28=Alt+F1
 activate widget 4=
+activate widget 46=
 activate widget 50=
+activate widget 69=
 activate widget 72=
+activate widget 90=
 activate widget 94=
 clear-history=
 clipboard_action=Ctrl+Alt+X
@@ -349,3 +356,6 @@ kcm-lookandfeel=
 kcm-users=
 powerdevilprofilesconfig=
 screenlocker=
+
+[terminator.desktop][Global Shortcuts]
+_launch=Ctrl+Alt+T

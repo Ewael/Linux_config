@@ -87,9 +87,10 @@ then
 fi
 
 # install snap packages
-if check "Install teams-for-linux";
+if check "Install snap packages";
 then
     sudo snap install teams-for-linux
+    sudo snap install flameshot
 fi
 
 # set git account

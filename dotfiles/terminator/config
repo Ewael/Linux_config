@@ -18,7 +18,7 @@
   close_window = <Primary><Shift>q
 [profiles]
   [[default]]
-    background_color = "#131913"
+    background_color = "#0d0d12"
     background_darkness = 0.95
     background_type = transparent
     cursor_color = "#aaaaaa"

@@ -28,10 +28,21 @@
     palette = "#2e3436:#cc0000:#2da310:#e66100:#1a5fb4:#813d9c:#06989a:#d3d7cf:#555753:#f66151:#8ae234:#ffa348:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
 [layouts]
   [[default]]
-    [[[window0]]]
+    [[[child0]]]
       type = Window
       parent = ""
-    [[[child1]]]
+      order = 0
+      position = 744:572
+      maximised = False
+      fullscreen = False
+      size = 988, 707
+      title = ewael@Hyrell:~/Linux_config
+      last_active_term = 96911eac-366d-4a30-8b7e-7f96d24c464f
+      last_active_window = True
+    [[[terminal1]]]
       type = Terminal
-      parent = window0
+      parent = child0
+      order = 0
+      profile = default
+      uuid = 96911eac-366d-4a30-8b7e-7f96d24c464f
 [plugins]

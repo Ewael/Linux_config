@@ -28,6 +28,7 @@ fi
 
 if check "Update terminator";
 then
+    mkdir -p ~/.config/terminator
     cp -v dotfiles/terminator/config ~/.config/terminator/
 fi
 

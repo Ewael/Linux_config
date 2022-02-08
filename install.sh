@@ -44,7 +44,9 @@ then
         redshift \
         tree \
         vim \
-        terminator
+        terminator \
+        zip \
+        unzip
 fi
 
 # install chrome

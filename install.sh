@@ -101,3 +101,11 @@ then
     git config --global user.email "turodoras@gmail.com"
     git config --global user.name "Ewael"
 fi
+
+# install gef
+if check "Install GDB and GEF";
+then
+    sudo pacman -S gdb
+    bash -c "$(curl -fsSL http://gef.blah.cat/sh)"
+    pip install keystone-engine unicorn capstone ropper
+fi

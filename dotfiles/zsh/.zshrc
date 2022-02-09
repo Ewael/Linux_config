@@ -38,15 +38,28 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 ##===========================================================================##
 
 # System
-alias install='sudo pacman -Suy'  # Install package on arch base distro
-alias update='sudo pacman -Syu'  # Update package on arch base distro
-alias remove='sudo pacman -Rcns'  # Remove package on arch base distro
+case `uname -r | tr '[:upper:]' '[:lower:]'` in
+    manjaro)
+        alias install='sudo pacman -Suy'  # Install package on arch base distro
+        alias update='sudo pacman -Syu'  # Update package on arch base distro
+        alias remove='sudo pacman -Rcns'  # Remove package on arch base distro
+    ;;
+    kali)
+        alias install='sudo apt install'
+        alias remove='sudo apt remove'
+        alias update='sudo apt update'
+        alias upgrade='sudo apt upgrade'
+        alias autoremove='sudo apt autoremove'
+        alias dist-upgrade='sudo apt dist-upgrade'
+        alias fresh='update && upgrade && autoremove && dist-upgrade'
+    ;;
+esac
 
 # Terminal
 alias la='ls -all'  # Display list of file with all information
 alias lsd='ls -d $PWD/*'  # List files with their full path
 alias sl='ls'  # Avoid spelling mistake
-alias cp="cp -i"  # Confirm before overwriting something
+alias cp='cp -i'  # Confirm before overwriting something
 alias rm='rm -iv'  # Confirm before removing something
 
 # Git

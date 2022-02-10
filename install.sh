@@ -3,6 +3,30 @@
 # exit on error
 set -e
 
+# os check
+case `uname -r | tr '[:upper:]' '[:lower:']` in
+    *manjaro*)
+        os=manjaro
+    ;;
+    *kali*)
+        os=kali
+    ;;
+esac
+echo [+] Detected OS is "$os"
+
+# install function
+install ()
+{
+    case "$os" in
+        manjaro)
+            sudo pacman -Suy "$@"
+        ;;
+        kali)
+            sudo apt install "$@"
+        ;;
+    esac
+}
+
 # y/n prompt function
 check ()
 {
@@ -19,9 +43,19 @@ check ()
 # update packages
 if check "Update the system";
 then
-    sudo pacman -Syy
-    sudo pacman -Syu
-    sudo pacman -Syyu
+    case "$os" in
+        manjaro)
+            sudo pacman -Syy
+            sudo pacman -Syu
+            sudo pacman -Syyu
+        ;;
+        kali)
+            sudo apt update
+            sudo apt upgrade
+            sudo apt autoremove
+            sudo apt dist-upgrade
+        ;;
+    esac
 fi
 
 # install oh-my-zsh
@@ -39,7 +73,7 @@ fi
 # install important packages
 if check "Install important packages";
 then
-    sudo pacman -S \
+    install \
         discord \
         redshift \
         tree \
@@ -52,18 +86,25 @@ fi
 # install chrome
 if check "Install Google Chrome browser";
 then
-    mkdir ~/Utils
-    cd ~/Utils
-    git clone https://aur.archlinux.org/google-chrome.git
-    cd google-chrome
-    makepkg -s
-    sudo pacman -U --noconfirm google-chrome*.zst
+    case "$os" in
+        manjaro)
+            mkdir ~/Utils
+            cd ~/Utils
+            git clone https://aur.archlinux.org/google-chrome.git
+            cd google-chrome
+            makepkg -s
+            sudo pacman -U --noconfirm google-chrome*.zst
+        ;;
+        kali)
+            echo [x] Not implemented, please do it manually
+        ;;
+    esac
 fi
 
 # install packages for YCM
 if check "Install packages to compile YouCompleteMe plugin";
 then
-    sudo pacman -S \
+    install \
         base-devel \
         cmake \
         go \
@@ -83,7 +124,7 @@ fi
 # install and enable snapd
 if check "Install and enable snapd";
 then
-    sudo pacman -S snapd
+    install snapd
     sudo systemctl enable --now snapd.socket
     sudo ln -s /var/lib/snapd/snap /snap
 fi
@@ -105,7 +146,7 @@ fi
 # install gef
 if check "Install GDB and GEF";
 then
-    sudo pacman -S gdb
+    install gdb
     bash -c "$(curl -fsSL http://gef.blah.cat/sh)"
     pip install keystone-engine unicorn capstone ropper
 fi

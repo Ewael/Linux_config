@@ -84,7 +84,8 @@ then
                 unzip
         ;;
         kali)
-            echo [+] No kali specific pkgs yet
+            install \
+                python3-pip
         ;;
     esac
     # common pkgs
@@ -156,8 +157,15 @@ fi
 # install snap packages
 if check "Install snap packages";
 then
-    sudo snap install teams-for-linux
-    sudo snap install flameshot
+    case "$os" in
+        manjaro)
+            sudo snap install teams-for-linux
+            sudo snap install flameshot
+        ;;
+        kali)
+            echo [+] No snap pkgs to install on kali yet
+        ;;
+    esac
 fi
 
 # set git account

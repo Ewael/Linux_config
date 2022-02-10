@@ -73,14 +73,51 @@ fi
 # install important packages
 if check "Install important packages";
 then
+    # os specific pkgs
+    case "$os" in
+        manjaro)
+            install \
+                discord \
+                redshift \
+                vim \
+                zip \
+                unzip
+        ;;
+        kali)
+            echo [+] No kali specific pkgs yet
+        ;;
+    esac
+    # common pkgs
     install \
-        discord \
-        redshift \
         tree \
-        vim \
-        terminator \
-        zip \
-        unzip
+        terminator
+fi
+
+# install packages for YCM
+if check "Install packages to compile YouCompleteMe plugin";
+then
+    # os specific pkgs
+    case "$os" in
+        manjaro)
+            install \
+                base-devel \
+                mono \
+                go \
+                jdk-openjdk
+        ;;
+        kali)
+            install \
+                build-essential \
+                mono-complete \
+                golang \
+                default-jdk
+        ;;
+    esac
+    # common pkgs
+    install \
+        cmake \
+        nodejs \
+        npm
 fi
 
 # install chrome
@@ -99,19 +136,6 @@ then
             echo [x] Not implemented, please do it manually
         ;;
     esac
-fi
-
-# install packages for YCM
-if check "Install packages to compile YouCompleteMe plugin";
-then
-    install \
-        base-devel \
-        cmake \
-        go \
-        npm \
-        mono \
-        nodejs \
-        jdk-openjdk
 fi
 
 # install vundle

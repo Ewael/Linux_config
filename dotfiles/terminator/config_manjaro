@@ -1,0 +1,48 @@
+[global_config]
+  dbus = False
+  focus = mouse
+  title_transmit_bg_color = "#26a269"
+  title_receive_bg_color = "#c64600"
+  enabled_plugins = ActivityWatch, InactivityWatch, TerminalShot, LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler
+[keybindings]
+  go_up = <Super>Up
+  go_down = <Super>Down
+  go_left = <Super>Left
+  go_right = <Super>Right
+  rotate_cw = <Shift><Super>Right
+  rotate_ccw = <Shift><Super>Left
+  split_horiz = <Super>backslash
+  split_vert = <Super>Return
+  close_term = <Shift><Super>q
+  copy = <Primary><Shift>c
+  close_window = <Primary><Shift>q
+[profiles]
+  [[default]]
+    background_color = "#1a1a1f"
+    background_darkness = 0.95
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#c0bebf"
+    show_titlebar = False
+    scrollback_infinite = True
+    palette = "#2e3436:#cc0000:#2da310:#e66100:#1a5fb4:#813d9c:#06989a:#d3d7cf:#555753:#f66151:#8ae234:#ffa348:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 806:607
+      maximised = False
+      fullscreen = False
+      size = 977, 683
+      title = ewael@Hyrell:~/Linux_config
+      last_active_term = 96911eac-366d-4a30-8b7e-7f96d24c464f
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = default
+      uuid = 96911eac-366d-4a30-8b7e-7f96d24c464f
+[plugins]

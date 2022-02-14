@@ -18,7 +18,7 @@
   close_window = <Primary><Shift>q
 [profiles]
   [[default]]
-    background_color = "#0d0d12"
+    background_color = "#1a1a1f"
     background_darkness = 0.95
     background_type = transparent
     cursor_color = "#aaaaaa"
@@ -32,7 +32,7 @@
       type = Window
       parent = ""
       order = 0
-      position = 744:572
+      position = 746:107
       maximised = False
       fullscreen = False
       size = 988, 707

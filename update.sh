@@ -3,6 +3,17 @@
 # exit on error
 set -e
 
+# os check
+case `uname -r | tr '[:upper:]' '[:lower:']` in
+    *manjaro*)
+        os=manjaro
+    ;;
+    *kali*)
+        os=kali
+    ;;
+esac
+echo [+] Detected OS is "$os"
+
 # y/n prompt function
 check ()
 {
@@ -29,7 +40,7 @@ fi
 if check "Update terminator";
 then
     mkdir -p ~/.config/terminator
-    cp -v dotfiles/terminator/config ~/.config/terminator/
+    cp -v dotfiles/terminator/config_"$os" ~/.config/terminator/config
 fi
 
 if check "Update monitors config";

@@ -3,8 +3,14 @@
 ##===========================================================================##
 
 # Path to oh-my-zsh installation
-# Do not forget to change name
-export ZSH="/home/ewael/.oh-my-zsh"
+case `uname -r | tr '[:upper:]' '[:lower:]'` in
+    *manjaro*)
+        export ZSH="/home/ewael/.oh-my-zsh"
+    ;;
+    *kali*)
+        export ZSH="/home/kali/.oh-my-zsh"
+    ;;
+esac
 
 # You can find more standard themes in ~/.oh-my-zsh/themes/*
 ZSH_THEME="robbyrussell"
@@ -56,6 +62,9 @@ case `uname -r | tr '[:upper:]' '[:lower:]'` in
 esac
 
 # Terminal
+terminator='terminator --geometry 1000x750+850+100'
+
+# Common
 alias la='ls -all'  # Display list of file with all information
 alias lsd='ls -d $PWD/*'  # List files with their full path
 alias sl='ls'  # Avoid spelling mistake

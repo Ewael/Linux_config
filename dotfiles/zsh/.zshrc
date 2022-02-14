@@ -61,9 +61,6 @@ case `uname -r | tr '[:upper:]' '[:lower:]'` in
     ;;
 esac
 
-# Terminal
-terminator='terminator --geometry 1000x750+850+100'
-
 # Common
 alias la='ls -all'  # Display list of file with all information
 alias lsd='ls -d $PWD/*'  # List files with their full path

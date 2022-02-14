@@ -39,12 +39,12 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # System
 case `uname -r | tr '[:upper:]' '[:lower:]'` in
-    manjaro)
+    *manjaro*)
         alias install='sudo pacman -Suy'  # Install package on arch base distro
         alias update='sudo pacman -Syu'  # Update package on arch base distro
         alias remove='sudo pacman -Rcns'  # Remove package on arch base distro
     ;;
-    kali)
+    *kali*)
         alias install='sudo apt install'
         alias remove='sudo apt remove'
         alias update='sudo apt update'

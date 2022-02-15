@@ -85,7 +85,8 @@ then
         ;;
         kali)
             install \
-                python3-pip
+                python3-pip \
+                vim-gtk
         ;;
     esac
     # common pkgs

@@ -13,7 +13,7 @@ case `uname -r | tr '[:upper:]' '[:lower:]'` in
 esac
 
 # You can find more standard themes in ~/.oh-my-zsh/themes/*
-ZSH_THEME="robbyrussell"
+ZSH_THEME="custom"
 
 # Browser
 export BROWSER="/usr/bin/google-chrome-stable"

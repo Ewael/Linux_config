@@ -29,6 +29,7 @@ check ()
 
 if check "Update .zshrc";
 then
+    cp -v dotfiles/zsh/custom.zsh-theme ~/.oh-my-zsh/themes/
     cp -v dotfiles/zsh/.zshrc ~/
 fi
 

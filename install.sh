@@ -8,8 +8,8 @@ case `uname -r | tr '[:upper:]' '[:lower:']` in
     *manjaro*)
         os=manjaro
     ;;
-    *ubuntu*)
-        os=manjaro # hotfix, TODO: proper case and better tests
+    *generic*)
+        os=ubuntu
     ;;
     *kali*)
         os=kali
@@ -20,14 +20,14 @@ echo [+] Detected OS is "$os"
 # install function
 install ()
 {
-    case "$os" in
-        manjaro)
-            sudo pacman -Suy "$@"
-        ;;
-        kali)
-            sudo apt install "$@"
-        ;;
-    esac
+    if [ "$os" == manjaro ]
+    then
+        sudo pacman -Suy "$@"
+    fi
+    if [ "$os" == kali ]
+    then
+        sudo apt install "$@"
+    fi
 }
 
 # y/n prompt function
@@ -46,19 +46,19 @@ check ()
 # update packages
 if check "Update the system";
 then
-    case "$os" in
-        manjaro)
-            sudo pacman -Syy
-            sudo pacman -Syu
-            sudo pacman -Syyu
-        ;;
-        kali)
-            sudo apt update
-            sudo apt upgrade
-            sudo apt autoremove
-            sudo apt dist-upgrade
-        ;;
-    esac
+    if [ "$os" == manjaro ]
+    then
+        sudo pacman -Syy
+        sudo pacman -Syu
+        sudo pacman -Syyu
+    fi
+    if [ "$os" == kali ] || [ "$os" == ubuntu ]
+    then
+        sudo apt update
+        sudo apt upgrade
+        sudo apt autoremove
+        sudo apt dist-upgrade
+    fi
 fi
 
 # install oh-my-zsh
@@ -77,21 +77,28 @@ fi
 if check "Install important packages";
 then
     # os specific pkgs
-    case "$os" in
-        manjaro)
-            install \
-                discord \
-                redshift \
-                vim \
-                zip \
-                unzip
-        ;;
-        kali)
-            install \
-                python3-pip \
-                vim-gtk
-        ;;
-    esac
+    if [ "$os" == manjaro ]
+    then
+        install \
+            discord \
+            redshift \
+            vim \
+            zip \
+            unzip
+    fi
+    if [ "$os" == kali ]
+    then
+        install \
+            python3-pip \
+            vim-gtk
+    fi
+    if [ "$os" == ubuntu ]
+    then
+        install \
+            curl \
+            git \
+            cmake
+    fi
     # common pkgs
     install \
         tree \
@@ -102,22 +109,22 @@ fi
 if check "Install packages to compile YouCompleteMe plugin";
 then
     # os specific pkgs
-    case "$os" in
-        manjaro)
-            install \
-                base-devel \
-                mono \
-                go \
-                jdk-openjdk
-        ;;
-        kali)
-            install \
-                build-essential \
-                mono-complete \
-                golang \
-                default-jdk
-        ;;
-    esac
+    if [ "$os" == manjaro ]
+    then
+        install \
+            base-devel \
+            mono \
+            go \
+            jdk-openjdk
+    fi
+    if [ "$os" == kali ]
+    then
+        install \
+            build-essential \
+            mono-complete \
+            golang \
+            default-jdk
+    fi
     # common pkgs
     install \
         cmake \
@@ -128,19 +135,17 @@ fi
 # install chrome
 if check "Install Google Chrome browser";
 then
-    case "$os" in
-        manjaro)
-            mkdir ~/Utils
-            cd ~/Utils
-            git clone https://aur.archlinux.org/google-chrome.git
-            cd google-chrome
-            makepkg -s
-            sudo pacman -U --noconfirm google-chrome*.zst
-        ;;
-        kali)
-            echo [x] Not implemented, please do it manually
-        ;;
-    esac
+    if [ "$os" == manjaro ]
+    then
+        mkdir ~/Utils
+        cd ~/Utils
+        git clone https://aur.archlinux.org/google-chrome.git
+        cd google-chrome
+        makepkg -s
+        sudo pacman -U --noconfirm google-chrome*.zst
+    else
+        echo [x] Not implemented on this OS, please do it manually
+    fi
 fi
 
 # install vundle
@@ -161,15 +166,15 @@ fi
 # install snap packages
 if check "Install snap packages";
 then
-    case "$os" in
-        manjaro)
-            sudo snap install teams-for-linux
-            sudo snap install flameshot
-        ;;
-        kali)
-            echo [+] No snap pkgs to install on kali yet
-        ;;
-    esac
+    if [ "$os" == manjaro ]
+    then
+        sudo snap install teams-for-linux
+        sudo snap install flameshot
+    fi
+    if [ "$os" == kali ] || [ "$os" == ubuntu ]
+    then
+        echo [+] No snap pkgs to install on this OS yet
+    fi
 fi
 
 # set git account

@@ -8,8 +8,8 @@ case `uname -r | tr '[:upper:]' '[:lower:']` in
     *manjaro*)
         os=manjaro
     ;;
-    *ubuntu*)
-        os=manjaro # hotfix, TODO: proper case and better tests
+    *generic*)
+        os=ubuntu
     ;;
     *kali*)
         os=kali

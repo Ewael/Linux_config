@@ -34,7 +34,7 @@ set cc=80 " Red column
 
 set showbreak=+++
 set showmatch
-set list listchars=tab:>-,trail:-
+set list listchars=tab:>\ ,trail:-
 
 set hlsearch
 set smartcase

@@ -51,6 +51,7 @@ then
         zip \
         unzip \
         tree \
+        flameshot \
         python-pip
 fi
 
@@ -93,13 +94,6 @@ then
     install snapd
     sudo systemctl enable --now snapd.socket
     sudo ln -s /var/lib/snapd/snap /snap
-fi
-
-# install snap packages
-if check "Install snap packages";
-then
-    sudo snap install teams-for-linux
-    sudo snap install flameshot
 fi
 
 # set git account

@@ -27,6 +27,11 @@ then
     cp -v dotfiles/vim/.vimrc ~/
 fi
 
+if check "Update .i3/config";
+then
+    cp -v dotfiles/i3/config ~/.i3/
+fi
+
 if check "Update terminator";
 then
     mkdir -p ~/.config/terminator

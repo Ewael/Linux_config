@@ -3,31 +3,10 @@
 # exit on error
 set -e
 
-# os check
-case `uname -r | tr '[:upper:]' '[:lower:']` in
-    *manjaro*)
-        os=manjaro
-    ;;
-    *generic*)
-        os=ubuntu
-    ;;
-    *kali*)
-        os=kali
-    ;;
-esac
-echo [+] Detected OS is "$os"
-
 # install function
 install ()
 {
-    if [ "$os" == manjaro ]
-    then
-        sudo pacman -Suy "$@"
-    fi
-    if [ "$os" == kali ]
-    then
-        sudo apt install "$@"
-    fi
+    sudo pacman -Suy "$@"
 }
 
 # y/n prompt function
@@ -46,19 +25,8 @@ check ()
 # update packages
 if check "Update the system";
 then
-    if [ "$os" == manjaro ]
-    then
-        sudo pacman -Syy
-        sudo pacman -Syu
-        sudo pacman -Syyu
-    fi
-    if [ "$os" == kali ] || [ "$os" == ubuntu ]
-    then
-        sudo apt update
-        sudo apt upgrade
-        sudo apt autoremove
-        sudo apt dist-upgrade
-    fi
+    sudo pacman -Syy
+    sudo pacman -Syu
 fi
 
 # install oh-my-zsh
@@ -76,76 +44,24 @@ fi
 # install important packages
 if check "Install important packages";
 then
-    # os specific pkgs
-    if [ "$os" == manjaro ]
-    then
-        install \
-            discord \
-            redshift \
-            vim \
-            zip \
-            unzip
-    fi
-    if [ "$os" == kali ]
-    then
-        install \
-            python3-pip \
-            vim-gtk
-    fi
-    if [ "$os" == ubuntu ]
-    then
-        install \
-            curl \
-            git \
-            cmake
-    fi
-    # common pkgs
     install \
+        discord \
+        redshift \
+        vim \
+        zip \
+        unzip \
         tree \
-        terminator
-fi
-
-# install packages for YCM
-if check "Install packages to compile YouCompleteMe plugin";
-then
-    # os specific pkgs
-    if [ "$os" == manjaro ]
-    then
-        install \
-            base-devel \
-            mono \
-            go \
-            jdk-openjdk
-    fi
-    if [ "$os" == kali ]
-    then
-        install \
-            build-essential \
-            mono-complete \
-            golang \
-            default-jdk
-    fi
-    # common pkgs
-    install \
-        cmake \
-        nodejs \
-        npm
+        python-pip
 fi
 
 # install chrome
 if check "Install Google Chrome browser";
 then
-    if [ "$os" == manjaro ]
-    then
-        mkdir ~/Utils
-        cd ~/Utils
-        git clone https://aur.archlinux.org/google-chrome.git
-        cd google-chrome
-        makepkg -s
-        sudo pacman -U --noconfirm google-chrome*.zst
-    else
-        echo [x] Not implemented on this OS, please do it manually
-    fi
+    mkdir ~/Utils
+    cd ~/Utils
+    git clone https://aur.archlinux.org/google-chrome.git
+    cd google-chrome
+    makepkg -si
 fi
 
 # install vundle
@@ -153,6 +69,22 @@ if check "Install vundle";
 then
     git clone git@github.com:VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
     echo [+] Don\'t forget to run \`:PluginInstall\` next time you open vim
+    vim
+fi
+
+# install packages for YCM
+if check "Install YouCompleteMe Vim plugin";
+then
+    install \
+        base-devel \
+        mono \
+        go \
+        jdk-openjdk \
+        cmake \
+        nodejs \
+        npm
+    cd ~/.vim/bundle/YouCompleteMe
+    python3 install.py --all
 fi
 
 # install and enable snapd
@@ -166,15 +98,8 @@ fi
 # install snap packages
 if check "Install snap packages";
 then
-    if [ "$os" == manjaro ]
-    then
-        sudo snap install teams-for-linux
-        sudo snap install flameshot
-    fi
-    if [ "$os" == kali ] || [ "$os" == ubuntu ]
-    then
-        echo [+] No snap pkgs to install on this OS yet
-    fi
+    sudo snap install teams-for-linux
+    sudo snap install flameshot
 fi
 
 # set git account

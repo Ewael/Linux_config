@@ -3,10 +3,31 @@
 # exit on error
 set -e
 
+# detect OS
+case `uname -r | tr '[:upper:]' '[:lower:']` in
+    *manjaro*)
+        os=manjaro
+    ;;
+    *generic*)
+        os=ubuntu
+    ;;
+    *kali*)
+        os=kali
+    ;;
+esac
+echo [+] Detected OS is "$os"
+
 # install function
 install ()
 {
-    sudo pacman -Suy "$@"
+    if [ "$os" == manjaro ]
+    then
+        sudo pacman -Suy "$@"
+    fi
+    if [ "$os" == kali ] || [ "$os" == ubuntu ]
+    then
+        sudo apt install "$@"
+    fi
 }
 
 # y/n prompt function
@@ -25,8 +46,17 @@ check ()
 # update packages
 if check "Update the system";
 then
-    sudo pacman -Syy
-    sudo pacman -Syu
+    if [ "$os" == manjaro ]
+    then
+        sudo pacman -Syy
+        sudo pacman -Syu
+    fi
+    if [ "$os" == kali ] || [ "$os" == ubuntu ]
+    then
+        sudo apt update
+        sudo apt upgrade
+        sudo apt autoremove
+    fi
 fi
 
 # install oh-my-zsh
@@ -44,15 +74,24 @@ fi
 # install important packages
 if check "Install important packages";
 then
-    install \
-        discord \
-        redshift \
-        vim \
-        zip \
-        unzip \
-        tree \
-        flameshot \
-        python-pip
+    if [ "$os" == ubuntu ]
+    then
+        install \
+            discord \
+            redshift \
+            vim \
+            zip \
+            unzip \
+            tree \
+            flameshot \
+            python-pip
+    fi
+    if [ "$os" == kali ]
+    then
+        install \
+            terminator \
+            htop
+    fi
 fi
 
 # install chrome
@@ -108,5 +147,12 @@ if check "Install GDB and GEF";
 then
     install gdb
     bash -c "$(curl -fsSL http://gef.blah.cat/sh)"
-    pip install keystone-engine unicorn capstone ropper
+    if [ "$os" == manjaro ]
+    then
+        pip install keystone-engine unicorn capstone ropper
+    fi
+    if [ "$os" == kali ]
+    then
+        pip3 install keystone-engine unicorn capstone ropper
+    fi
 fi

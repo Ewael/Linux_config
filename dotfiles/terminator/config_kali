@@ -32,11 +32,11 @@
       type = Window
       parent = ""
       order = 0
-      position = 746:107
+      position = 850:270
       maximised = False
       fullscreen = False
-      size = 988, 707
-      title = ewael@Hyrell:~/Linux_config
+      size = 800, 600
+      title = Terminator
       last_active_term = 96911eac-366d-4a30-8b7e-7f96d24c464f
       last_active_window = True
     [[[terminal1]]]

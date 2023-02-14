@@ -3,6 +3,20 @@
 # exit on error
 set -e
 
+# os check
+case `uname -r | tr '[:upper:]' '[:lower:']` in
+    *manjaro*)
+        os=manjaro
+    ;;
+    *generic*)
+        os=ubuntu
+    ;;
+    *kali*)
+        os=kali
+    ;;
+esac
+echo [+] Detected OS is "$os"
+
 # y/n prompt function
 check ()
 {

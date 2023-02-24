@@ -30,7 +30,7 @@ plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Display infos
-neofecth
+neofetch
 
 ##===========================================================================##
 #                             *** TERMINAL ***                                #

@@ -8,7 +8,7 @@ case `uname -r | tr '[:upper:]' '[:lower:]'` in
         export ZSH="/home/ewael/.oh-my-zsh"
     ;;
     *kali*)
-        export ZSH="/home/kali/.oh-my-zsh"
+        export ZSH="/root/.oh-my-zsh"
     ;;
 esac
 
@@ -28,6 +28,9 @@ plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 # COMPLETION_WAITING_DOTS="true"
 
 source $ZSH/oh-my-zsh.sh
+
+# Display infos
+neofecth
 
 ##===========================================================================##
 #                             *** TERMINAL ***                                #

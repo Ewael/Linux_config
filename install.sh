@@ -90,7 +90,8 @@ then
     then
         install \
             terminator \
-            htop
+            htop \
+            neofetch
     fi
 fi
 

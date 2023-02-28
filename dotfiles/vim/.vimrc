@@ -4,19 +4,18 @@
 "        PLUGINS
 "" ---------------------
 
-" Vundle is for plugin installation
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+" vim-plug is for plugin installation
+call plug#begin()
+Plug 'preservim/NERDTree'
 
 " Plugins
-Plugin 'ntpeters/vim-better-whitespace' " Highlight useless spaces
-Plugin 'vim-airline/vim-airline' " Color on bottom bar
-Plugin 'vim-airline/vim-airline-themes' " Themes for vim-airline
-Plugin 'ycm-core/YouCompleteMe' " Auto-completion plugin
+Plug 'ntpeters/vim-better-whitespace' " Highlight useless spaces
+Plug 'vim-airline/vim-airline' " Color on bottom bar
+Plug 'vim-airline/vim-airline-themes' " Themes for vim-airline
+Plug 'ycm-core/YouCompleteMe' " Auto-completion plugin
 
 " MUST BE AFTER PLUGINS
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 " Options

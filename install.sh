@@ -105,27 +105,25 @@ then
     makepkg -si
 fi
 
-# install vundle
-if check "Install vundle";
+# install vim-plug
+if check "Install vim-plug";
 then
-    git clone git@github.com:VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
-    echo [+] Don\'t forget to run \`:PluginInstall\` next time you open vim
-    vim
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo [+] Don\'t forget to run \`:PlugInstall\` next time you open vim
 fi
 
 # install packages for YCM
 if check "Install YouCompleteMe Vim plugin";
 then
     install \
-        base-devel \
-        mono \
-        go \
-        jdk-openjdk \
-        cmake \
+        golang \
+        mono-complete \
         nodejs \
+        openjdk-17-jdk openjdk-17-jre \
         npm
-    cd ~/.vim/bundle/YouCompleteMe
-    python3 install.py --all
+    cd ~/.vim/plugged/YouCompleteMe
+    python3 install.py --all --force-sudo
 fi
 
 # install and enable snapd
@@ -154,6 +152,7 @@ then
     fi
     if [ "$os" == kali ]
     then
-        pip3 install keystone-engine unicorn capstone ropper
+        pip3 install --break-system-packages \
+            keystone-engine unicorn capstone ropper
     fi
 fi

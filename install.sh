@@ -144,7 +144,7 @@ fi
 # install gef
 if check "Install GDB and GEF";
 then
-    install gdb
+    install gdb gdb-multiarch
     bash -c "$(curl -fsSL http://gef.blah.cat/sh)"
     if [ "$os" == manjaro ]
     then

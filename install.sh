@@ -91,7 +91,8 @@ then
         install \
             terminator \
             htop \
-            neofetch
+            neofetch \
+            ltrace strace
     fi
 fi
 
